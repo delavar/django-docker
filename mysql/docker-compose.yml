@@ -1,0 +1,19 @@
+version: '3'
+services:
+  nginx:
+    image: mysql:5.7.26
+    container_name: mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d
+      - ./conf.d:/etc/mysql/conf.d
+    env_file:
+      - ./../envs/mysql.env
+
+networks:
+  default:
+    external:
+      name: mysql-network
