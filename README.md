@@ -8,7 +8,9 @@
 
 run following command
 >>$ docker network create nginx-proxy
+
 >>$ cd nginx-proxy
+
 >>$ sudo docker-compose up -d
 
 
@@ -29,7 +31,8 @@ make your database and mysql user , run following command:
 >>$ docker exec -it mysql /bin/bash
 >>$ mysql -u root -p
 <br>
->> CREATE DATABASE IF NOT EXISTS <DB_NAME> CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+
+>> CREATE DATABASE IF NOT EXISTS < DB_NAME > CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 >> CREATE USER IF NOT EXISTS '< DB_USER >'@'%' IDENTIFIED BY '< DB_PASS >';
 
@@ -41,6 +44,7 @@ make your database and mysql user , run following command:
 
 
 set app1/requirements.txt
+<br>
 set app1/web/web/settings_local.py , there is an example there
 >>DEBUG = True
 >>DEVEL = True
@@ -64,6 +68,7 @@ set app1 environment in /envs/app1.env
 **install django app:**
 (django , uwsgi)
 >>$ cd app1
+
 >>$ docker-compose up -d
 
 
