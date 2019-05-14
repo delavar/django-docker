@@ -8,5 +8,4 @@ RUN apt-get install -y python-dev python3-dev pkg-config default-libmysqlclient-
 RUN pip install --upgrade pip setuptools
 RUN pip install -r requirements.txt
 #ADD ./src /src/
-CMD python manage.py collectstatic --no-input;python manage.py migrate;
 

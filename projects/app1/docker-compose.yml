@@ -4,9 +4,9 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    command: uwsgi --ini uwsgi.ini
     container_name: app1
     working_dir: /src/web
+    command: bash -c "python manage.py collectstatic --no-input && python manage.py migrate && uwsgi --ini uwsgi.ini"
     volumes:
       - .:/src
     expose:
